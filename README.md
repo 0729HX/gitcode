@@ -65,11 +65,53 @@ hexo server
 hexo generate
 ```
 
-### 部署
+## 部署
+
+### 部署到 Cloudflare Pages
+
+#### 方式一：通过 Cloudflare Dashboard
+
+1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
+2. 进入 **Workers & Pages** -> **Pages**
+3. 点击 **Create a project**
+4. 选择 **Connect to Git**
+5. 选择您的 GitHub 仓库（0729HX/gitcode）
+6. 配置构建设置：
+   - **框架预设**: Hexo
+   - **构建命令**: `npm run build`
+   - **构建输出目录**: `public`
+   - **Node.js 版本**: 18 或 20
+7. 点击 **Save and Deploy**
+
+#### 方式二：通过 Wrangler CLI
+
+```bash
+# 安装 Wrangler
+npm install -g wrangler
+
+# 登录 Cloudflare
+wrangler login
+
+# 部署项目
+wrangler pages project create hexo-blog --production-branch=main
+wrangler pages deploy ./public --project-name=hexo-blog
+```
+
+### 部署到 GitHub Pages
 
 ```bash
 hexo deploy
 ```
+
+### 本地部署测试
+
+```bash
+hexo clean
+hexo generate
+hexo server
+```
+
+访问地址: http://localhost:4000/
 
 ## 常用命令
 
