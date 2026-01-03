@@ -78,7 +78,7 @@ hexo generate
    - **框架预设**: Hexo
    - **构建命令**: `npm run build`
    - **构建输出目录**: `public`
-   - **Node.js 版本**: 18 或 20
+   - **Node.js 版本**: 24
 7. 点击 **Save and Deploy**
 
 Cloudflare Pages 会自动检测 Hexo 框架并使用正确的构建配置。每次推送代码到 GitHub 时，Cloudflare 会自动重新构建和部署。
