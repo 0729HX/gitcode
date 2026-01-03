@@ -69,8 +69,6 @@ hexo generate
 
 ### 部署到 Cloudflare Pages
 
-#### 方式一：通过 Cloudflare Dashboard
-
 1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
 2. 进入 **Workers & Pages** -> **Pages**
 3. 点击 **Create a project**
@@ -83,19 +81,7 @@ hexo generate
    - **Node.js 版本**: 18 或 20
 7. 点击 **Save and Deploy**
 
-#### 方式二：通过 Wrangler CLI
-
-```bash
-# 安装 Wrangler
-npm install -g wrangler
-
-# 登录 Cloudflare
-wrangler login
-
-# 部署项目
-wrangler pages project create hexo-blog --production-branch=main
-wrangler pages deploy ./public --project-name=hexo-blog
-```
+Cloudflare Pages 会自动检测 Hexo 框架并使用正确的构建配置。每次推送代码到 GitHub 时，Cloudflare 会自动重新构建和部署。
 
 ### 部署到 GitHub Pages
 
